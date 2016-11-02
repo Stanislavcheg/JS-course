@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+<head>
+	<title>To do list</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/controller.js"></script>
+</head>
+	<body>
+		<div class="bground">
+			<header>
+				<h1>To do list:</h1>
+			</header>
+			<div class="main" ng-controller="todoCtrl">
+				<div class="AddFldContainer">
+					<input type="text" name="search" class="inputField" placeholder="Type some task" ng-model="task">
+					<button class="AddBtn" ng-click="add($event)">Add</button>
+					<input type="text" name="tagInput1" class="tagInput" placeholder="Type some tag" ng-model="tag">
+					<select class="tagList" ng-model="tag">
+						<option ng-repeat="tag in tags">{{tag}}</option>
+					</select>
+					<div class="tagsContainer">
+						<div class="tagsHolder">
+							<h3>Tags:</h3>
+							<div class="tags">
+								<span class="tag" ng-repeat="tag in tags" ng-click="tagFltr(tag)">{{tag}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="toDoListHolder">
+					<ol class="ToDoList">
+<!-- 					<li ng-repeat="item in data | tagFilter:tagSelected" ng-show = "item.show" ng-class="{'isDone': item.item_done}" id="{{item.id}}">
+						<span ng-click="isDone($event, $index)">{{item.text}}</span>
+						<input type="text" class="editInp" ng-model="item.text" ng-hide = "!item.item_edit"> 
+						<span class="okBtn" ng-hide = "!item.item_edit" ng-click="ok($index)">OK</span>
+						<span class="cancelBtn" ng-hide = "!item.item_edit" ng-click="cancel($index)">Cancel</span>
+						<span class="editBtn" ng-click="edit($index)" ng-hide = "item.item_edit">Edit</span>
+						<span class="close" ng-click="del(item.id)" ng-hide = "item.item_edit">{{"\u00D7"}}</span>
+					</li> -->
+					<item ng-repeat="item in data | filter:{tag: tagSelected}" item="item" all-data="allData"></item>
+					</ol>
+					<div class="pagerHolder">
+						<span class="pager" ng-show = "pagesVis" ng-repeat="page in pages" ng-click="pager(page)">{{page}} </span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html> 

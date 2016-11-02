@@ -1,0 +1,173 @@
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	z-index: 0;
+	box-sizing: border-box;
+}
+
+body {
+    background-color: #e6e9ea;
+    padding-top: 40px;
+    font-family: Arial;
+    font-size: 14px;
+}
+
+.bground {
+	margin: 0 auto 0;
+	width: 900px;
+}
+
+header {
+    background-color: Darkgray;
+    padding: 30px 40px 0 40px;
+ }
+
+.AddFldContainer {
+	background-color: Darkgray;
+    padding: 10px 40px;
+}
+
+.AddFldContainer:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.inputField {
+    border: none;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+}
+
+.searchBtn, .AddBtn {
+	border: none;
+    padding: 10px;
+    width: 100px;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.AddBtn {
+	border-right: 2px solid darkgray;
+}
+
+.searchBtn:hover, .AddBtn:hover {
+    background-color: #bbb;
+}
+
+.ToDoList li {
+cursor: pointer;
+    position: relative;
+    padding: 12px 40px 12px 8px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.ToDoList li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.ToDoList li:hover {
+    background: lightgray;
+}
+
+
+.editInp {
+ position: absolute;
+    width: 600px;
+    left: 0;
+    top: 0;
+    padding: 12px 16px 12px 8px;
+    background-color: inherit;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    word-wrap: break-word;
+}
+
+.editInp:hover {
+    background: lightgray;
+}
+
+.close, .cancelBtn {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.editBtn, .okBtn {
+    position: absolute;
+    right: 46px;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.okBtn {
+    margin-right: 42px; 
+}
+
+.editBtn:hover, .okBtn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.close:hover, .cancelBtn:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+.tagsHolder h3, .tags{
+	display: inline-block;
+	margin: 10px 0;
+}
+
+.tags span:before {
+    content: " #";
+}
+
+.tags span {
+    color: blue;
+}
+
+#toDoForm {
+	margin: 40px;
+}
+
+#toDoDisp {
+	width: 90%;
+	height: 50px;
+	float: left;
+}
+
+
+.DeleteBtn{
+	width: 83px;
+	height: 20px;	
+	margin: 5px;
+	margin-bottom: 0;
+	margin-right:0;  	
+}
+
+
+.ToDoList li.isDone{
+    text-decoration: line-through;
+    background-color: #8FBC8F;
+}
+
+
+#pagerHolder {
+    padding-top:15px;
+    font-weight:bold;
+}
+.pager {
+    padding-left:0.5em;
+}

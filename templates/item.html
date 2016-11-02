@@ -1,0 +1,8 @@
+<li ng-show = "item.show" ng-class="{'isDone': item.item_done}" id="{{item.id}}">
+<span ng-click="isDone($event, $index)">{{item.text}}</span>
+<input type="text" class="editInp" ng-model="item.text" ng-hide = "!item.item_edit"> 
+<span class="okBtn" ng-hide = "!item.item_edit" ng-click="ok($index)">OK</span>
+<span class="cancelBtn" ng-hide = "!item.item_edit" ng-click="cancel($index)">Cancel</span>
+<span class="editBtn" ng-click="edit($index)" ng-hide = "item.item_edit">Edit</span>
+<span class="close" ng-click="del(item.id)" ng-hide = "item.item_edit">{{"\u00D7"}}</span>
+</li>
