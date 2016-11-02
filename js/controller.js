@@ -13,11 +13,6 @@ todo.directive('item', function () {
  				$scope.data[i].item_edit = true;
  				
  			}
-
-
- 		},
- 		link: function (scope, element) {
- 			
  		}
  	};
 });
