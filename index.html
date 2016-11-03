@@ -30,18 +30,12 @@
 				</div>
 				<div class="toDoListHolder">
 					<ol class="ToDoList">
-<!-- 					<li ng-repeat="item in data | tagFilter:tagSelected" ng-show = "item.show" ng-class="{'isDone': item.item_done}" id="{{item.id}}">
-						<span ng-click="isDone($event, $index)">{{item.text}}</span>
-						<input type="text" class="editInp" ng-model="item.text" ng-hide = "!item.item_edit"> 
-						<span class="okBtn" ng-hide = "!item.item_edit" ng-click="ok($index)">OK</span>
-						<span class="cancelBtn" ng-hide = "!item.item_edit" ng-click="cancel($index)">Cancel</span>
-						<span class="editBtn" ng-click="edit($index)" ng-hide = "item.item_edit">Edit</span>
-						<span class="close" ng-click="del(item.id)" ng-hide = "item.item_edit">{{"\u00D7"}}</span>
-					</li> -->
-					<item ng-repeat="item in data | filter:{tag: tagSelected}" item="item" all-data="allData"></item>
+					<item ng-repeat="item in filteredData = (data | filter: {tag : tagSelected}) | startFrom: startingItem() | limitTo: itemsPerPage" item="item" data="data"></item>
 					</ol>
-					<div class="pagerHolder">
-						<span class="pager" ng-show = "pagesVis" ng-repeat="page in pages" ng-click="pager(page)">{{page}} </span>
+					<div class="pagerHolder" id="pagination" ng-show ="numberOfPages() > 1">
+						<button class="Pagebtn" ng-disabled="firstPage()" ng-click="pageBack()">Prev</button>
+						<span>{{currentPage+1}} from {{numberOfPages()}}</span>
+						<button class="Pagebtn" ng-disabled="lastPage()" ng-click="pageForward()">Next</button>
 					</div>
 				</div>
 			</div>

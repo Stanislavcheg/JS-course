@@ -58,7 +58,7 @@ header {
 	border-right: 2px solid darkgray;
 }
 
-.searchBtn:hover, .AddBtn:hover {
+.searchBtn:hover, .AddBtn:hover,  .Pagebtn:hover {
     background-color: #bbb;
 }
 
@@ -78,7 +78,6 @@ cursor: pointer;
 .ToDoList li:hover {
     background: lightgray;
 }
-
 
 .editInp {
  position: absolute;
@@ -163,11 +162,28 @@ cursor: pointer;
     background-color: #8FBC8F;
 }
 
-
+/*
 #pagerHolder {
     padding-top:15px;
     font-weight:bold;
 }
 .pager {
     padding-left:0.5em;
+}
+*/
+
+#pagination {
+  text-align: center;
+    max-width: 200px;
+     margin: 20px auto 0 auto;
+}
+
+.Pagebtn {
+    border: none;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.3s;
 }
